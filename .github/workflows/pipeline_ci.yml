@@ -7,8 +7,27 @@ on:
     branches: [main]
 
 jobs:
+  quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Instalar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Rodar lint
+        run: npm run lint
+
   build:
     runs-on: ubuntu-latest
+    needs: quality
 
     steps:
       - name: Checkout código
@@ -54,3 +73,5 @@ jobs:
 
       - name: Rodar testes
         run: npm test
+      - name: Run Coverage
+        run: npm run coverage

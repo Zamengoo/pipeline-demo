@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +16,13 @@
     "eslint": "^10.0.3",
     "globals": "^17.4.0",
     "jest": "^30.3.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "lines": 80
+      }
+    }
   }
 }
