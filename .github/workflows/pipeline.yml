@@ -4,22 +4,21 @@ on:
   push:
     branches: [main]
 
-  jobs:
-
-   test:
+jobs:
+  test:
     runs-on: ubuntu-latest
 
-  steps:
-    - name: Checkout código
-      uses: actions/checkout@v4
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
 
-    - name: Instalar Node
-      uses: actions/setup-node@v4
-      with:
-       node-version: 24
+      - name: Instalar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
 
-    - name: Instalar dependências
-      run: npm install
+      - name: Instalar dependências
+        run: npm install
 
-    - name: Rodar testes
-      run: npm test
+      - name: Rodar testes
+        run: npm test
