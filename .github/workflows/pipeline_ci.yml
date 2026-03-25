@@ -45,7 +45,7 @@ jobs:
             -Dsonar.projectKey=Zamengoo_pipeline-demo
             -Dsonar.organization=zamengoo
         env:
-          SONAR_TOKEN: 123456789
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   build:
     runs-on: ubuntu-latest
