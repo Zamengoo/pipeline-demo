@@ -15,7 +15,7 @@ jobs:
         uses: gitleaks/gitleaks-action@v2
 
       - name: Verificar Vulnerabilidades
-        uses: npm audit --audit-level=high
+        run: npm audit --audit-level=high
 
   quality:
     runs-on: ubuntu-latest
