@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Coverage
         run: npm run coverage
-        
+
       - name: Scan for secrets
         uses: gitleaks/gitleaks-action@v2
 
@@ -62,7 +62,7 @@ jobs:
             -Dsonar.projectKey=Zamengoo_pipeline-demo
             -Dsonar.organization=zamengoo
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: 12345678
 
   build:
     runs-on: ubuntu-latest
